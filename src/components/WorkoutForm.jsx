@@ -14,14 +14,17 @@ const WorkoutForm = () => {
     e.preventDefault();
 
     const workout = { title, load, reps };
-    const response = await fetch("/api/workouts", {
-      method: "POST",
-      body: JSON.stringify(workout),
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    });
+    const response = await fetch(
+      "https://musle-mountain-api.onrender.com/api/workouts",
+      {
+        method: "POST",
+        body: JSON.stringify(workout),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    );
 
     const json = await response.json();
 
